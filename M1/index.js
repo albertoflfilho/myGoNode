@@ -1,4 +1,6 @@
-const array = [1, 2, 3, 4];
-const newArray = array.map(item => item * 2);
+const http = require('http');
 
-console.log(newArray);
+http.createServer((req, res) => {
+  res.write("Node.js");
+  res.end();
+}).listen(3000);
