@@ -1,6 +1,9 @@
-const http = require('http');
+const express = require('express');
+const app = express();
 
-http.createServer((req, res) => {
-  res.write("Node.js");
-  res.end();
-}).listen(3000);
+app.get('/', (req, res) => {
+  res.send('Node.js');
+})
+
+app.listen(3000);
+//localhost:3000
