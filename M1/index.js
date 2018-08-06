@@ -11,4 +11,8 @@ app.get('/test', (req, res) => {
   res.send("Hey Express!");
 })
 
+app.get('/user', (req, res) =>{
+  res.send('User: Alberto');
+})
+
 app.listen(3000);
