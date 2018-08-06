@@ -1,15 +1,14 @@
 const express = require('express');
 const app = express();
 
-app.get('/test', (req, res, next) => {
-  res.send('Hey Express!');
+app.use((req, res, next) => {
+  console.log('Accessed...');
   next();
 })
 
 
 app.get('/test', (req, res) => {
-  console.log('Working...');
-
+  res.send("Hey Express!");
 })
 
 app.listen(3000);
