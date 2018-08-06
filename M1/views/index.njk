@@ -3,6 +3,8 @@
     <title>myGoNode</title>
   </head>
   <body>
-    Wellcome, {{ name }}
+    {% for name in names %}
+      Wellcome, {{ name }} <br>
+    {% endfor %}
   </body>
 </html>
