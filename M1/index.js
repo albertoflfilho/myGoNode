@@ -1,18 +1,17 @@
 const express = require('express');
 const app = express();
 
-const userMiddleware = (req, res, next) => {
+app.use('/user', (req, res, next) => {
   console.log('Accessed...');
   next();
-};
+});
 
+app.get('/user', (req, res) => {
+  res.send("User: albertoflfilho");
+});
 
-app.get('/test', (req, res) => {
-  res.send("Hey Express!");
-})
-
-app.get('/user', userMiddleare, (req, res) =>{
-  res.send('User: Alberto');
-})
+app.get('/user/name', (req, res) =>{
+  res.send('Name: Alberto Lacerda');
+});
 
 app.listen(3000);
