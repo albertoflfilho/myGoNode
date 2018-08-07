@@ -1,12 +1,20 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const nunjucks =require('nunjucks');
+const path = require('path');
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ exrended: false }));
+nunjucks.configure(path.resolve('app', 'views'), {
+  autoescape: true,
+  express: app,
+});
+
+app.set('view engine', 'njk');
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
-  res.send("Let's go with Node.js");
+  res.render('index');
 });
 
 app.listen(3000);
