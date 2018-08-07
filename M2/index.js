@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const nunjucks =require('nunjucks');
+const nunjucks = require('nunjucks');
 const path = require('path');
 
 const app = express();
