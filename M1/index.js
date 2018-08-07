@@ -20,7 +20,11 @@ app.get('/', (req, res) => {
 });
 
 app.post('/auth', (req, res) => {
-  res.send(`We can find the current logged in username ${req.body.username} and password ${ req.body.password }`);
+
+  const { username, password } = req.body;
+
+  res.send(`We can find the current logged in username ${ username } and password ${ password }`);
+
 })
 
 app.listen(3000);
