@@ -5,6 +5,8 @@ const path = require('path');
 
 const app = express();
 
+const { User } = require('./app/models');
+
 nunjucks.configure(path.resolve('app', 'views'), {
   autoescape: true,
   express: app,
